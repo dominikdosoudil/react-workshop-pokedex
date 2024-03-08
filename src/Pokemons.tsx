@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "./pokemon-list.module.css";
 import Pagination from "./Pagination.tsx";
 import { ITEMS_PER_PAGE } from "./constatns.ts";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { listPokemons } from "./api.ts";
 
 interface PokemonsProps {
@@ -15,6 +15,7 @@ const Pokemons = ({ onSelect }: PokemonsProps) => {
     queryKey: ["pokemons", page],
     queryFn: () => listPokemons(page),
     retry: false,
+    placeholderData: keepPreviousData,
   });
 
   if (pokemons.isPending) {
