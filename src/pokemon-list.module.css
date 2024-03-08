@@ -1,0 +1,26 @@
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.pokemonList {
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+}
+
+
+.pokemonList > button {
+    flex-grow: 1;
+}
+
+.pokemonList > button.active {
+    background-color: red;
+}
+
+.wrapper .pagination {
+    display: flex;
+    gap: 1em;
+}
